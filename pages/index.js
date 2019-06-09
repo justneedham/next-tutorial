@@ -1,7 +1,8 @@
 import React from 'react';
 import Link from 'next/Link';
-import Layout from '../components/Layout';
+import Layout from 'components/Layout';
 import fetch from 'isomorphic-unfetch';
+import styles from '../styes.less';
 
 const PostLink = props => (
     <li>
@@ -25,7 +26,7 @@ const Index = props => (
                 {props.shows.map(show => (
                     <li key={show.id}>
                         <Link as={`/p/${show.id}`} href={`/post?id=${show.id}`}>
-                            <a>{show.name}</a>
+                            <a className={styles.example}>{show.name}</a>
                         </Link>
                     </li>
                 ))}
